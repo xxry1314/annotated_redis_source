@@ -11,8 +11,9 @@
 #
 # Dependencies are stored in the Makefile.dep file. To rebuild this file
 # Just use 'make dep', but this is only needed by developers.
-
+# 生产release.h 和release.c 文件
 release_hdr := $(shell sh -c './mkreleasehdr.sh')
+# 查询linux内核名称
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 OPTIMIZATION?=-O2
 DEPENDENCY_TARGETS=hiredis linenoise lua
